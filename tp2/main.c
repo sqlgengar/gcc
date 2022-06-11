@@ -1,43 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int is_odd(int);
 
 int main(){
 
-	char c_input;
+    int input_number;
+    
+    printf( "enter a number: \n" );
 
-	printf( "enter a character \n" );
+    scanf( " %i", &input_number );
+    fflush(stdin);
 
-	scanf(" %c", &c_input);
-	fflush(stdin);
+    if ( is_odd( input_number ) != 1 ){
 
-	if( c_input >= 'A' &&  c_input <= 'U' ){
+        printf( "the value in not odd \n" );
+        exit(0);
 
-		c_input = c_input + 32;
+    }
 
-	}
+    printf( "the value is odd \n" );
 
-	switch( c_input ){
+    return 0;
 
-		case 'a':
-				printf( "the character ingress is a vocal \n" );
-				break;
-		case 'e':
-				printf( "the character ingress is a vocal \n" );
-				break;
-		case 'i':
-				printf( "the character ingress is a vocal \n" );
-				break;
-		case 'o':
-				printf( "the character ingress is a vocal \n" );
-				break;
-		case 'u':
-				printf( "the character ingress is a vocal \n" );
-				break;
-		default:
-				printf( "the character ingress is not a vocal \n" );
-				break;
+}
 
-	}
+int is_odd( int value_number ){
 
-	return 0;
+    if ( ( value_number % 2 ) != 0 ){
+
+        return 0;
+
+    }
+
+    return 1;
 
 }
